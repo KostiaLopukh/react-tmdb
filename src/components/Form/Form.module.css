@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Lato:wght@300&family=Rowdies:wght@300&display=swap');
+
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    font-size: 20px;
+    width: 200px;
+    background: #d29c36;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    max-width: 80%;
+    /*box-shadow: 0 -200px 100px -120px coral inset;*/
+    border-radius: 30px;
+    animation: background 3s infinite alternate;
+
+}
+
+@keyframes background {
+    50% {
+        background: skyblue;
+        box-shadow: 0 -200px 100px -100px #e79c70 inset;
+    }
+}
+
+
+

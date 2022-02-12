@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&display=swap');
+
+.movieDetailsRow {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.movieDetailsWrapBlack {
+    height: fit-content;
+    background: url("https://kartinkin.net/uploads/posts/2021-07/thumbs/1626182883_33-kartinkin-com-p-zadnii-fon-chernii-krasivo-33.jpg");
+    color: white;
+    padding-bottom: 20px;
+
+}
+
+.movieDetailsWrapLight {
+    background: url("https://ae04.alicdn.com/kf/HTB1imMQnJzJ8KJjSspkq6zF7VXaf/-.jpg");
+    height: fit-content;
+    padding-bottom: 20px;
+}
+
+.movieDetailsImg {
+    height: 500px;
+}
+
+.movieDetailsTitle {
+    font-family: 'Rowdies', cursive;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -.5px;
+    padding-left: 20px;
+}
+
+
+.about {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.details {
+    display: flex;
+    padding: 20px;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+
+}
+
+.leftRow {
+    width: 130%;
+
+}
+
+.rightRow {
+    padding-left: 50px;
+}
+
+.left {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.right {
+    font-size: 20px;
+    font-style: italic;
+
+}
+
+
+.video {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+
+}
+
+iframe {
+    width: 600px;
+    height: 400px;
+}

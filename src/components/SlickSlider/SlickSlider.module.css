@@ -1,0 +1,28 @@
+.container {
+    width: 65%;
+    margin: 60px auto;
+
+}
+
+
+.sliderBlack {
+    padding-left: 25px;
+    color: white;
+
+}
+
+.sliderLight {
+    color: black;
+    padding-left: 25px;
+}
+
+.recommendationHover {
+    transition: .3s ease;
+    position: relative;
+
+}
+
+.recommendationHover:hover {
+    opacity: 0.5;
+
+}

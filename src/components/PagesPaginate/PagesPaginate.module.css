@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped&family=Rowdies:wght@300&display=swap');
+
+
+.totalPages {
+    color: orange;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.8s ease;
+    font-family: 'Rowdies', cursive;
+    margin-left: 50px;
+
+}
+
+.totalPages a:hover {
+    background: red;
+    /*background-color: rgba(255, 255, 255, 0.25);*/
+    /*color: orange;*/
+}
+
+
+.pages {
+    margin: 20px 0;
+    display: flex;
+}
+
+
+.pages a {
+    color: orange;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.8s ease;
+    font-family: 'Rowdies', cursive;
+}
+
+.currentPage {
+    font-weight: bold;
+    color: orange;
+    border-bottom: 5px solid orange;
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.pages a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: orange;
+}
+
+

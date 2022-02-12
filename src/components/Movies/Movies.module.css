@@ -1,0 +1,17 @@
+.MoviesRowBlack, .MoviesRowLight {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 40px;
+}
+
+.MoviesRowBlack {
+    background: url("https://ae04.alicdn.com/kf/HTB1imMQnJzJ8KJjSspkq6zF7VXaf/-.jpg");
+}
+
+.MoviesRowLight {
+    background: url("https://kartinkin.net/uploads/posts/2021-07/thumbs/1626182883_33-kartinkin-com-p-zadnii-fon-chernii-krasivo-33.jpg");
+}
+
+

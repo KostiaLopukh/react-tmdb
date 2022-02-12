@@ -1,0 +1,146 @@
+.Movie {
+    width: 400px;
+    overflow: hidden;
+    margin-top: 130px;
+    height: fit-content;
+    -webkit-transition: all .5s ease-out;
+    opacity: 1;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.titleBlack, .titleLight {
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.titleBlack {
+    color: white;
+}
+
+.ratingBlack {
+    color: white;
+
+}
+
+.release_dataBlack {
+    color: white;
+
+}
+
+
+span {
+    font-weight: bold;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    gap: 10px;
+}
+
+.genreBlack, .genreLight {
+    margin-top: 5px;
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 10%;
+}
+
+.genreBlack {
+    color: white;
+    border: 1px solid white;
+
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.blocImg {
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+}
+
+.blocImg img {
+    width: 400px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.dws:hover .blocImg img {
+    transform: rotate(-10deg) scale(1.3);
+    filter: blur(1px);
+    opacity: .5;
+}
+
+.blocText {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+}
+
+.text {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0 20px;
+    opacity: 0;
+    transition: .5s;
+}
+
+.text h2 {
+    font-size: 25px;
+}
+
+.text h2 span {
+    color: orange;
+    padding-bottom: 3px;
+}
+
+.text p {
+    position: absolute;
+    top: 180px;
+    width: 250px;
+    padding: 0 10px;
+}
+
+.dws:hover .text {
+    opacity: 1;
+}
+
+.blocText::before,
+.blocText::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+
+.blocText::before {
+    border-top: 1px solid #fff;
+    transform: scale(0, 1);
+}
+
+.blocText::after {
+    transform: scale(1, 0);
+}
+
+.dws:hover .blocText::before,
+.dws:hover .blocText::after {
+    transform: scale(1, 1);
+}

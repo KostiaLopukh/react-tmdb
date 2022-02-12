@@ -1,0 +1,52 @@
+.loadingBlack, .loadingLight {
+    height: 100vh;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.load {
+    width: 80px;
+    height: 80px;
+    margin: 110px auto 0;
+    border: solid 10px orange;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    -webkit-transition: all 0.5s ease-in;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    transition: all 0.5s ease-in;
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.loadingBlack {
+    background: black;
+    color: white;
+}
+
+.loadingLight {
+    background: white;
+    color: black;
+}
