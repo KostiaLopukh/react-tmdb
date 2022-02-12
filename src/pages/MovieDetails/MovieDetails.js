@@ -17,6 +17,7 @@ const MovieDetails = () => {
 
     const location = window.location.href;
     const id = getId(location);
+
     useEffect(() => {
         const getMovie = async () => {
             const response = await movieService.getMovieDetails(id);
@@ -35,7 +36,6 @@ const MovieDetails = () => {
         }
         getVideos()
     }, [])
-
 
     const currentGenresArr = [];
     if (currentMovie) {
@@ -57,15 +57,15 @@ const MovieDetails = () => {
                 <div>
                     <img src={`https://image.tmdb.org/t/p/w400${currentMovie.poster_path}`}
                          className={css.movieDetailsImg} alt=""/>
+                    <div>{currentMovie.toString()}</div>
+
                 </div>
                 <div>
 
                     <div><span className={css.movieDetailsTitle}>{currentMovie.title}</span></div>
-
                     <div className={css.about}>Про фільм</div>
-
-
                     <div className={css.details}>
+
                         <div className={css.leftRow}>
                             <div className={css.left}>Рік випуску</div>
                             <div className={css.left}>Країна</div>
@@ -75,6 +75,7 @@ const MovieDetails = () => {
                             <div className={css.left}>Середні бал</div>
                             <div className={css.left}>Огляд</div>
                         </div>
+
                         <div className={css.rightRow}>
                             <div className={css.right}>{currentMovie.release_date}</div>
                             <div className={css.right}>{currentMovie.production_countries[0].name}</div>
@@ -84,12 +85,11 @@ const MovieDetails = () => {
                             <div className={css.right}>{currentMovie.vote_average}</div>
                             <div className={css.right}>{currentMovie.overview}</div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
             <div className={css.video}>
-
                 <iframe title={'video'}
                         allowFullScreen="allowfullscreen"
                         src={'https://www.youtube.com/embed/' + currentMovieTrailers?.results[0]?.key}/>
