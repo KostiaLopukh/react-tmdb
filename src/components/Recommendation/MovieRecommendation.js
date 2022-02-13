@@ -7,12 +7,9 @@ const MovieRecommendation = ({movie}) => {
     const {poster_path, original_title, id} = movie;
     const theme = localStorage.getItem('theme');
 
-
-
     return (<div className={theme === 'true' ? css.sliderBlack : css.sliderLight}>
 
             <Link to={`/id/${id.toString()}`} target={'_blank'}>
-
                 <div className={css.recommendationHover}>
                     <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt=""/>
                 </div>

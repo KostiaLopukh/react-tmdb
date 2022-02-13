@@ -37,28 +37,28 @@ export const getMovies = createAsyncThunk('getByGenre/moviesSlice', async ({page
 
 });
 
-export const getByString = createAsyncThunk(
-    'getByString/movieSlice',
-    async ({string, page: currentPage}, {dispatch}) => {
-        try {
-            dispatch(setString({string}))
-            dispatch(setCurrentPage({page: currentPage}))
+export const getByString = createAsyncThunk('getByString/movieSlice', async ({
+                                                                                 string, page: currentPage
+                                                                             }, {dispatch}) => {
+    try {
+        dispatch(setString({string}))
+        dispatch(setCurrentPage({page: currentPage}))
 
-            const response = await movieService.getByString(string, currentPage);
+        const response = await movieService.getByString(string, currentPage);
 
-            if (response.results.length) {
-                dispatch(setEmptyResponse({response: false}));
-            } else {
-                dispatch(setEmptyResponse({response: true}));
-            }
-
-            return response;
-
-        } catch (e) {
-            console.error(e);
+        if (response.results.length) {
+            dispatch(setEmptyResponse({response: false}));
+        } else {
+            dispatch(setEmptyResponse({response: true}));
         }
 
-    })
+        return response;
+
+    } catch (e) {
+        console.error(e);
+    }
+
+})
 
 
 const moviesSlice = createSlice({
@@ -106,7 +106,8 @@ const moviesSlice = createSlice({
             state.string = action.payload.string;
         }, setEmptyResponse: (state, action) => {
             state.emptyResponse = action.payload.response;
-        }
+        },
+
     },
 
     extraReducers: {
@@ -144,6 +145,5 @@ export const {
     setMoviesWithGenresPerPage,
     setCurrentPage,
     setString,
-    setEmptyResponse
-
+    setEmptyResponse,
 } = moviesSlice.actions;

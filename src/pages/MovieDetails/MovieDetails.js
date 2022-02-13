@@ -6,6 +6,7 @@ import {movieService} from "../../services/movieService";
 import {Header, Loading, Recommendation} from "../../components";
 import {getId} from "../../custom/getId";
 import {detailsGenresFinder} from "../../custom/detailsGenresFinder";
+import {useParams} from "react-router-dom";
 
 const MovieDetails = () => {
 
@@ -15,8 +16,8 @@ const MovieDetails = () => {
 
     const {switcherStatus} = useSelector(state => state['moviesReducer']);
 
-    const location = window.location.href;
-    const id = getId(location);
+    const {id} = useParams();
+    console.log(id);
 
     useEffect(() => {
         const getMovie = async () => {

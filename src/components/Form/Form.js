@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getMovies, getByString} from "../../slices/moviseSlice/moviesSlice";
+import {getMovies, getByString, setChosenGenres} from "../../slices/moviseSlice/moviesSlice";
 import css from './Form.module.css'
 
 const Form = () => {
@@ -12,7 +12,7 @@ const Form = () => {
         if (e.target.value === '') {
             dispatch(getMovies({page: 1}));
         } else {
-            dispatch(getByString({string: e.target.value, page: currentPage}));
+            dispatch(getByString({string: e.target.value, page: 1}));
         }
     }
 
