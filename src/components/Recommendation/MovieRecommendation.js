@@ -1,11 +1,12 @@
 import React from 'react';
 
 import css from "../SlickSlider/SlickSlider.module.css";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const MovieRecommendation = ({movie}) => {
     const {poster_path, original_title, id} = movie;
     const theme = localStorage.getItem('theme');
+
 
     return (<div className={theme === 'true' ? css.sliderBlack : css.sliderLight}>
 
