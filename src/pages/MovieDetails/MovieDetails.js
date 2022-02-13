@@ -57,7 +57,6 @@ const MovieDetails = () => {
                 <div>
                     <img src={`https://image.tmdb.org/t/p/w400${currentMovie.poster_path}`}
                          className={css.movieDetailsImg} alt=""/>
-                    <div>{currentMovie.toString()}</div>
 
                 </div>
                 <div>
