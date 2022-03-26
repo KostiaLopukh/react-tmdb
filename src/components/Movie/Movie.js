@@ -9,6 +9,7 @@ const Movie = ({movie}) => {
     const {id, poster_path, title, vote_average, release_date, genre_ids} = movie
     const {genres} = useSelector(state => state['moviesReducer']);
 
+
     const currentGenresArr = [];
     genresFinder(genres, genre_ids, currentGenresArr);
 

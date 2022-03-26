@@ -9,13 +9,19 @@ form {
 .input {
     font-size: 20px;
     width: 200px;
-    background: #d29c36;
+    padding: 0 5px;
+    border: none;
+    background: #e85a19;
     font-family: 'IBM Plex Sans Thai Looped', sans-serif;
     max-width: 80%;
-    /*box-shadow: 0 -200px 100px -120px coral inset;*/
+    box-shadow: 0 -200px 100px -120px coral inset;
     border-radius: 30px;
     animation: background 3s infinite alternate;
 
+}
+
+.login{
+    font-size: 15px;
 }
 
 @keyframes background {

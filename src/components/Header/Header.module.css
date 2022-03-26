@@ -119,10 +119,6 @@
     border-radius: 40px;
 }
 
-.dropName {
-
-
-}
 
 
 * {
@@ -134,7 +130,6 @@
     align-items: center;
     justify-content: center;
     min-height: 100%;
-
 }
 
 
@@ -198,6 +193,90 @@
     top: -120px;
 }
 
+
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+
+.accountFather {
+    position: relative;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 40px;
+}
+
+.dropDownDetails {
+    position: absolute;
+    padding: 10px 0;
+    background: orange;
+    border-radius: 30px;
+    width: 200px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.accountChild {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-family: Arial, serif;
+    z-index: 1;
+}
+
+.accountFather .liquid {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    background: orange;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+.accountFather .liquid::after,
+.accountFather .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+
+.accountFather .liquid::before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: animate 5s linear infinite;
+}
+
+.accountFather .liquid::after {
+
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    animation: animate 10s linear infinite;
+}
+
+.accountFather:hover .liquid {
+    top: -120px;
+}
+
 @keyframes animate {
     0% {
         transform: translate(-50%, -75%) rotate(0deg);
@@ -206,3 +285,70 @@
         transform: translate(-50%, -75%) rotate(360deg);
     }
 }
+
+
+.auth{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.log{
+    width: 100px!important;
+    font-size: 12px!important;
+}
+
+.activate{
+    width: 80px!important;
+    height: 20px!important;
+    font-size: 13px!important;
+}
+
+.bn632 {
+    width: 130px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+    height: 40px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632 > a{
+    color: white;
+}
+
+.bn632:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.bn632:focus {
+    outline: none;
+}
+
+.bn632.bn19 {
+    background-image: linear-gradient(
+            to right,
+            #f5ce62,
+            #e43603,
+            #fa7199,
+            #e85a19
+    );
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+
+
+

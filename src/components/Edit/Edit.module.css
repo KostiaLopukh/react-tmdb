@@ -1,0 +1,36 @@
+.row {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+.buttonsToChange{
+    display: flex;
+    margin: 5px;
+}
+
+.changePasswordForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*flex-direction: column;*/
+    gap: 10px;
+}
+
+.changePasswordRow{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px;
+}
+
+.forgot{
+
+}

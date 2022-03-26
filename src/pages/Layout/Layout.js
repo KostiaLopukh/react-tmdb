@@ -9,7 +9,7 @@ const Layout = () => {
     return (
         <div className={css.main}>
             <div>
-                <Header form={true} genres={true}/>
+                <Header form={true} genres={true} register={true}/>
                 <Movies/>
             </div>
         </div>
