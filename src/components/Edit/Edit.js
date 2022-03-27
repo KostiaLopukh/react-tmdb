@@ -33,14 +33,12 @@ const Edit = () => {
         dispatch(checkAuth({accessToken}));
     }, []);
 
-
     useEffect(() => {
         if (error401) {
             const refreshToken = localStorage.getItem('refreshToken');
             dispatch(refresh({refreshToken}));
         }
     }, [error401])
-
 
 
     if (allowToNavigate) {

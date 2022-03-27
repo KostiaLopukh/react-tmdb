@@ -1,13 +1,10 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {Header} from "../Header/Header";
 import css from './notLogged.module.css';
 import style from '../../pages/Register/Register.module.css';
 
 const NotLogged = () => {
     const theme = localStorage.getItem('theme');
-
-
     return (
         <div className={theme === 'true' ? style.containerBlack : style.containerWhite}>
             <Header register={true} genres={false} form={false}/>

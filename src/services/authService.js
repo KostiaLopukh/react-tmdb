@@ -51,5 +51,4 @@ export const authService = {
     sendMailActivate: async (email) => {
         return backAxiosService.post('/auth/sendMail', {email})
     },
-
 }

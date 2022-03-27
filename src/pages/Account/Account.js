@@ -18,7 +18,6 @@ const Account = () => {
 
     const {themeStatus} = useSelector(state => state['moviesReducer']);
 
-
     useEffect(async () => {
         const {user} = await authService.getDetailsByEmail(email).then(value => value.data);
         setUser(user);

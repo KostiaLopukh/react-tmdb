@@ -21,7 +21,6 @@ const Login = () => {
     const [currentEmail, setCurrentEmail] = useState('')
     const [sendEmail, setSendEmail] = useState('');
 
-
     const {isAuth, error} = useSelector(state => state['authReducer']);
     const {themeStatus} = useSelector(state => state['moviesReducer']);
 

@@ -48,7 +48,6 @@ const ForgotPassword = () => {
         dispatch(forgotPasswordSet({actionToken: token, newPassword: password}))
     };
 
-
     return (
 
         <div className={`${css.row} ${theme === 'true' ? style.containerBlack : style.containerWhite}`}>

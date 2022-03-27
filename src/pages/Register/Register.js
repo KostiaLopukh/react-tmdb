@@ -2,15 +2,13 @@ import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {useDispatch, useSelector} from "react-redux";
-import {registerUser, set400, setError} from "../../slices/authSlice/authSlice";
+import {registerUser} from "../../slices/authSlice/authSlice";
 import {useForm} from "react-hook-form";
 import {Header} from "../../components";
 import css from './Register.module.css';
 import style from '../../components/Header/Header.module.css';
 import {registerValidator} from "../../validators/registerValidator";
 import form from "../../components/Form/Form.module.css";
-
-
 
 const Register = () => {
 
@@ -31,7 +29,6 @@ const Register = () => {
 
 
     const navigate = useNavigate();
-
 
     const submit = (data) => {
         dispatch(registerUser({data}));
@@ -67,7 +64,6 @@ const Register = () => {
                 </button>
                 {error && <div style={{color:'orange'}}>{error}</div>}
             </form>
-
 
         </div>
 
