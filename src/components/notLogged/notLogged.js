@@ -7,6 +7,7 @@ import style from '../../pages/Register/Register.module.css';
 const NotLogged = () => {
     const theme = localStorage.getItem('theme');
 
+
     return (
         <div className={theme === 'true' ? style.containerBlack : style.containerWhite}>
             <Header register={true} genres={false} form={false}/>

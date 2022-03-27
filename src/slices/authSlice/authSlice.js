@@ -109,6 +109,7 @@ export const changePassword = createAsyncThunk('authSlice/changePassword', async
             dispatch(set200(true))
             dispatch(set403(false));
         }
+
     } catch (e) {
         if (e.response.status === 401) {
             dispatch(set401(true));

@@ -29,6 +29,7 @@ const Register = () => {
     const {isAuth, error, error400} = useSelector(state => state['authReducer']);
     const {switcherStatus} = useSelector(state => state['moviesReducer']);
 
+
     const navigate = useNavigate();
 
 
