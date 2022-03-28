@@ -51,4 +51,12 @@ export const authService = {
     sendMailActivate: async (email) => {
         return backAxiosService.post('/auth/sendMail', {email})
     },
+    uploadAvatar: async (formData, accessToken) => {
+        return backAxiosService.post('/auth/uploadAvatar', formData, {
+            headers:{
+                "Content-Type": "multipart/form-data",
+                "Authorization":accessToken,
+            }
+        })
+    },
 }

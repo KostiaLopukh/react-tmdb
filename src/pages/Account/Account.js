@@ -47,39 +47,47 @@ const Account = () => {
                 <div>
                     <h1>Your profile</h1>
                 </div>
-                <div>
-                    <span>Name:</span>
-                    <div className={css.info}>
-                        {user.name}
-                    </div>
-                    <span>Email:</span>
-                    <div className={css.info}>
-                        {user.email}
-                    </div>
-                    <span>Phone:</span>
-                    <div className={css.info}>
-                        {user.phone}
-                    </div>
-                    <span>Status:</span>
-                    <div className={css.info}>
-                        {user.isActivated ? 'Activated' : 'Not activated'}
+                <div className={css.flexRow}>
+                    <div>
+                        <img src={user.avatar} className={css.avatar} alt=""/>
                     </div>
                     <div>
-                        {!user.isActivated && <button className={`${button.bn632} ${button.bn19} ${button.activate}`}
-                                                      onClick={() => sendMailActivate()}>Activate</button>}
-                        {emailSent &&
-                            <div style={{padding:'10px 0'}}><span>Email sent successfully, please, check your box to activate your account!</span>
-                            </div>}
-                    </div>
-                    <span>Date:</span>
-                    <div className={css.info}>
-                        Account was created {diffDays} days ago - {user.createdAt && user.createdAt.slice(0, 10)}
+                        <span>Name:</span>
+                        <div className={css.info}>
+                            {user.name}
+                        </div>
+                        <span>Email:</span>
+                        <div className={css.info}>
+                            {user.email}
+                        </div>
+                        <span>Phone:</span>
+                        <div className={css.info}>
+                            {user.phone}
+                        </div>
+                        <span>Status:</span>
+                        <div className={css.info}>
+                            {user.isActivated ? 'Activated' : 'Not activated'}
+                        </div>
+                        <div>
+                            {!user.isActivated &&
+                                <button className={`${button.bn632} ${button.bn19} ${button.activate}`}
+                                        onClick={() => sendMailActivate()}>Activate</button>}
+                            {emailSent &&
+                                <div style={{padding: '10px 0'}}><span>Email sent successfully, please, check your box to activate your account!</span>
+                                </div>}
+                        </div>
+                        <span>Date:</span>
+                        <div className={css.info}>
+                            Account was created {diffDays} days ago - {user.createdAt && user.createdAt.slice(0, 10)}
+                        </div>
+
+                        <button className={`${button.bn632} ${button.bn19}`}>
+                            <Link to={'/editProfile'} state={user}>Edit</Link>
+                        </button>
                     </div>
                 </div>
 
-                <button className={`${button.bn632} ${button.bn19}`}>
-                    <Link to={'/editProfile'} state={user}>Edit</Link>
-                </button>
+
             </div>
         </div>
     );

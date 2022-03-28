@@ -147,6 +147,18 @@ export const forgotPasswordSet = createAsyncThunk('authSlice/forgotPassword', as
     }
 });
 
+export const uploadAvatar = createAsyncThunk('authSlice/forgotPassword', async ({formData, accessToken}, {dispatch}) => {
+    try {
+        const response = await authService.uploadAvatar(formData, accessToken);
+        console.log(response);
+        if (response.status === 200) {
+            dispatch(setChangedAvatar(true));
+        }
+    } catch (e) {
+        dispatch(setError(e.response.message));
+    }
+});
+
 
 const authSlice = createSlice({
     name: '/authSlice', initialState: {
@@ -159,6 +171,8 @@ const authSlice = createSlice({
         error401: false,
         error403: false,
         status200: false,
+        changedAvatar: false,
+
     }, reducers: {
         setIsAuth: (state, action) => {
             state.isAuth = action.payload;
@@ -184,6 +198,9 @@ const authSlice = createSlice({
         set200: (state, action) => {
             state.status200 = action.payload;
         },
+        setChangedAvatar: (state, action) => {
+            state.changedAvatar = action.payload;
+        },
     },
 
     extraReducers: {}
@@ -202,5 +219,6 @@ export const {
     set403,
     set200,
     setAllowToNavigate,
-    set400
+    set400,
+    setChangedAvatar
 } = authSlice.actions;

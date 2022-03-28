@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {
     changePassword,
     checkAuth, refresh,
-    updateUser
+    updateUser, uploadAvatar
 } from "../../slices/authSlice/authSlice";
 import {Header} from "../Header/Header";
 import style from "../../pages/Register/Register.module.css";
@@ -18,11 +18,12 @@ const {forgotPassword} = authService;
 
 const Edit = () => {
 
-    const {error401, error403, status200, allowToNavigate} = useSelector(state => state['authReducer']);
-    const {themeStatus} = useSelector(state => state['moviesReducer']);
+    const {error401, error403, status200, allowToNavigate, changedAvatar} = useSelector(state => state['authReducer']);
 
+    const {themeStatus} = useSelector(state => state['moviesReducer']);
     const theme = localStorage.getItem('theme');
     const [form, setForm] = useState(false);
+    const [changeAvatar, setChangeAvatar] = useState(false);
     const [sendEmail, setSendEmail] = useState(false);
 
     const navigate = useNavigate();
@@ -69,6 +70,16 @@ const Edit = () => {
         }
     };
 
+    const onSelectImageHandler = async (files) => {
+        const accessToken = localStorage.getItem('accessToken')
+        const file = files[0];
+        const formData = new FormData();
+
+        formData.append('avatar', file)
+
+        dispatch(uploadAvatar({accessToken, formData}))
+    }
+
     return (
         <div className={theme === 'true' ? style.containerBlack : style.containerWhite}>
             <Header/>
@@ -105,19 +116,39 @@ const Edit = () => {
                             <div>
                                 <button type={'submit'} className={`${button.bn632} ${button.bn19}`}>Change</button>
                             </div>
+
+
                         </div>
                     </form>
                     : null
                 }
-                {form && isActivated===false ? <span>To change you password, please, activate your account ^)</span> : null}
+
+                <button className={`${button.bn632} ${button.bn19}`}
+                        onClick={() => setChangeAvatar(!changeAvatar)}>Change avatar
+                </button>
+
+                {changeAvatar && <div style={{marginTop:"10px"}}>
+                    <input type="file"
+                           onChange={(e) => onSelectImageHandler(e.target.files)}
+                    />
+                    {changedAvatar && <span>Avatar changed successfully</span>}
+                </div>
+                }
+
+                {form && isActivated === false ?
+                    <span>To change you password, please, activate your account ^)</span> : null}
 
                 {status200 && <span>Password changed successfully!</span>}
                 {sendEmail && <span>Email sent successfully, please check your box!</span>}
                 {error403 && <span>Wrong old password</span>}
+
+
             </div>
+
 
         </div>
     );
 };
 
 export default Edit;
+
